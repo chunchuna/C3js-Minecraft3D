@@ -22,8 +22,6 @@ async function OnBeforeProjectStart(runtime)
 	//MinecraftMenu
 	InitModMinecraftMenu(runtime)
 	
-	
-	
 }
 
 function Tick(runtime)
@@ -32,7 +30,6 @@ function Tick(runtime)
 }
 
 // ******************************MinecraftMenu
-
 
 function InitModMinecraftMenu (runtime){
 	const gameLayout =runtime.getLayout("S Menu");

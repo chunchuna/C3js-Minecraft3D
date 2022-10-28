@@ -6,12 +6,9 @@ export class MinecraftMenu {
 	#modVersion;
 	#modName;
 	
-	
 	constructor(){
-		
 	
 	}
-	
 	
 	 Init(runtime){
 		
@@ -25,11 +22,13 @@ export class MinecraftMenu {
 		const button_Generateworld = runtime.objects.button_Generateworld.getFirstPickedInstance();
 		if(button_Generateworld){
 			button_Generateworld.addEventListener("click",()=>{
-												  
-				alert("click button")									  
-												  })
+				alert("click button")})
 		}
 	}
 	
+	
+	#tick(){
+		
+	}
 	
 }
