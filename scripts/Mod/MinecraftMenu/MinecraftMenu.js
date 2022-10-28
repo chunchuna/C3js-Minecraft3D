@@ -1,3 +1,8 @@
+
+//mod is MinecraftMenu 
+// creat by chunchun 
+
+
 export class MinecraftMenu {
 
 	#runtime;
@@ -10,13 +15,20 @@ export class MinecraftMenu {
 	
 	}
 	
-	 Init(runtime){
+	Init(runtime){
+
 		
+		this.#addListener(runtime)
 		this.#modName="MinecraftMenu"
 		console.log("init mod"+this.#modName)
 		 this.#ButtonManager(runtime)
+		
 	}
 	
+	#addListener(runtime){
+		runtime.addEventListener("tick",()=>this.#tick(runtime))
+		
+	}
 	
 	#ButtonManager(runtime){
 		const button_Generateworld = runtime.objects.button_Generateworld.getFirstPickedInstance();
@@ -28,7 +40,7 @@ export class MinecraftMenu {
 	
 	
 	#tick(){
-		
+		console.log("MM tick test")
 	}
 	
 }

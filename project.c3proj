@@ -115,6 +115,20 @@
 						}
 					],
 					"name": "Mod"
+				},
+				{
+					"items": [
+						{
+							"name": "Runtime.js",
+							"type": "application/javascript",
+							"sid": 561336712926159,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Runtime"
 				}
 			]
 		},
@@ -276,7 +290,7 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false,
+		"autoReloadScriptsOnPreview": true,
 		"exportFileStructure": "folders"
 	},
 	"viewportWidth": 1920,
