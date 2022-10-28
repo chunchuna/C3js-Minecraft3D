@@ -10,26 +10,24 @@ export class Miniruntime {
 
         if (limit) {
             if (runtime.layout == layout) {
-                runtime.addEventListener("tick", () => func())
+                runtime.addEventListener("tick", ()=>func)
             }
         }
 
-        runtime.addEventListener("tick", () => func())
+        runtime.addEventListener("tick", ()=>func)
 
     }
-
     addLayoutInit(runtime, layout, func) {
         if (layout) {
-            layout.addEventListener("beforelayoutstart", () => func())
+            layout.addEventListener("beforelayoutstart", () => func)
         }
 
     }
-
     addLayoutEnd(runtime, layout, func) {
         if (layout) {
-            layout.addEventListener("beforelayoutend", () => func())
+            layout.addEventListener("beforelayoutend", () => func)
         }
-
-
+        
     }
+    
 } 

@@ -8,16 +8,19 @@ export class MinecraftMenu {
 
     #runtime;
     #CurrentSence;
-    #Gameversion;
+    #Gameversion = "V1.0.1";
     #modVersion;
     #modName;
+    
 
     constructor() {
+
 
     }
 
     Init(runtime) {
-
+        this.#runtime=runtime;
+        
         this.#modName = "MinecraftMenu"
         this.#addListener(runtime)
         this.#ButtonManager(runtime)
@@ -27,9 +30,9 @@ export class MinecraftMenu {
     #addListener(runtime) {
 
         const MiniRuntim = new Miniruntime(runtime)
-        const layout = runtime.getLayout("S Menus");
+        const layout = runtime.getLayout("S Menu");
 
-        MiniRuntim.addTick(runtime, this.#tick, layout, true)
+        MiniRuntim.addTick(runtime, this.#tick(), layout, true)
 
     }
 
@@ -42,7 +45,13 @@ export class MinecraftMenu {
         }
     }
 
+    #gameVersionUpdate() {
+        const text_Version =this.#runtime.objects.Text_VersionInfo.getFirstPickedInstance();
+        text_Version.text = "Version" + this.#Gameversion;
+    }
+
     #tick() {
+        this.#gameVersionUpdate()
         console.log("MM tick test")
     }
 

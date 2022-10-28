@@ -4,7 +4,7 @@
 	"name": "Minecraft3d-construct3",
 	"runtime": "c3",
 	"useWorker": "auto",
-	"bundleAddons": false,
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
@@ -29,13 +29,19 @@
 			"author": "Scirra",
 			"version": "r311",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "EdwardBonnett_ScriptReload",
+			"name": "[Script Reload]",
+			"author": "Edward Bonnett",
+			"version": "1.0.0.2",
+			"bundled": true
 		}
 	],
 	"uniqueId": "lnbiat5brkg",
 	"objectTypes": {
-		"items": [
-			"Text_VersionInfo"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [],
@@ -50,13 +56,21 @@
 					},
 					{
 						"items": [
-							"button_Generateworld"
+							"button_Generateworld",
+							"Text_VersionInfo"
 						],
 						"subfolders": [],
 						"name": "_UI"
 					}
 				],
 				"name": "MinecraftMenu"
+			},
+			{
+				"items": [
+					"ScriptReload"
+				],
+				"subfolders": [],
+				"name": "Addon"
 			}
 		]
 	},
