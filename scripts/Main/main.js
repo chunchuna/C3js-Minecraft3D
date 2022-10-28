@@ -19,7 +19,6 @@ async function OnBeforeProjectStart(runtime) {
 
     //MinecraftMenu
     InitModMinecraftMenu(runtime)
-    
 
 }
 
