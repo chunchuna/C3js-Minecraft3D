@@ -14,7 +14,7 @@ Basic Framework
 
 
 ## Try the project
-If you're interested in Minecraft. Or if you're interested in the construction 3 engine, you can try it.
+If you're interested in Minecraft. Or if you're interested in the Construct 3 engine, you can try it.
 
 
 
