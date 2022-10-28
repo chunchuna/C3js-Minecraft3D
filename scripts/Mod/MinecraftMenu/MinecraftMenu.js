@@ -29,7 +29,8 @@ export class MinecraftMenu {
         const MiniRuntim = new Miniruntime(runtime)
         const layout = runtime.getLayout("S Menu");
 
-        MiniRuntim.addTick(runtime, this.#tick, layout, true)
+        //MiniRuntim.addTick(runtime, this.#tick, layout, true)
+        runtime.addEventListener("tick", () => this.#tick());
 
     }
 

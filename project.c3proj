@@ -17,7 +17,7 @@
 		{
 			"type": "plugin",
 			"id": "Button",
-			"name": "按钮",
+			"name": "Button",
 			"author": "Scirra",
 			"version": "r311",
 			"bundled": false
@@ -85,7 +85,7 @@
 				{
 					"items": [
 						{
-							"name": "main.js",
+							"name": "Main.js",
 							"type": "application/javascript",
 							"sid": 389139671422064,
 							"script-info": {
