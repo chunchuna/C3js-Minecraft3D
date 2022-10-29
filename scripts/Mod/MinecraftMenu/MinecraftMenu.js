@@ -26,7 +26,6 @@ export class MinecraftMenu {
         
         this.#updateGameVersion();
         
-        
 
     }
 

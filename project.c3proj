@@ -17,7 +17,7 @@
 		{
 			"type": "plugin",
 			"id": "Button",
-			"name": "Button",
+			"name": "按钮",
 			"author": "Scirra",
 			"version": "r312",
 			"bundled": false
@@ -26,6 +26,22 @@
 			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Camera3D",
+			"name": "3D相机",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Shape3D",
+			"name": "3D形状",
 			"author": "Scirra",
 			"version": "r312",
 			"bundled": false
@@ -56,6 +72,44 @@
 					}
 				],
 				"name": "MinecraftMenu"
+			},
+			{
+				"items": [
+					"3D相机"
+				],
+				"subfolders": [],
+				"name": "Addon"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"3d_basebox"
+						],
+						"subfolders": [],
+						"name": "Assest"
+					}
+				],
+				"name": "Default"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"min3d_grass"
+						],
+						"subfolders": [],
+						"name": "Assest"
+					},
+					{
+						"items": [],
+						"subfolders": [],
+						"name": "Texture"
+					}
+				],
+				"name": "MinecraftWorldBuild"
 			}
 		]
 	},
@@ -67,13 +121,23 @@
 	},
 	"layouts": {
 		"items": [
-			"S Menu"
+			"S Menu",
+			"S GameWorld"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"场景 1"
+				],
+				"subfolders": [],
+				"name": "Perfab"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
-			"E Menu"
+			"E Menu",
+			"E GameWorld"
 		],
 		"subfolders": []
 	},
@@ -111,6 +175,20 @@
 							],
 							"subfolders": [],
 							"name": "MinecraftMenu"
+						},
+						{
+							"items": [
+								{
+									"name": "MinWorldBuild.js",
+									"type": "application/javascript",
+									"sid": 804088390307183,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "MinecraftWorldBuild"
 						}
 					],
 					"name": "Mod"
