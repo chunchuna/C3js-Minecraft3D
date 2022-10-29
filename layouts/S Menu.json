@@ -130,12 +130,12 @@
 					}
 				},
 				{
-					"type": "Text_VersionInfo",
+					"type": "text_Versiton",
 					"properties": {
-						"text": "Version:1.0.0",
+						"text": "Text",
 						"enable-bbcode": true,
 						"font": "arcade",
-						"size": 32,
+						"size": 36,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -155,10 +155,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1593,
-						"y": 1009,
-						"width": 317,
-						"height": 72,
+						"x": 1547,
+						"y": 1006,
+						"width": 335,
+						"height": 57,
 						"originX": 0,
 						"originY": 0,
 						"color": [

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 31100,
+	"savedWithRelease": 31200,
 	"name": "Minecraft3d-construct3",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r311",
+			"version": "r312",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Button",
 			"name": "Button",
 			"author": "Scirra",
-			"version": "r311",
+			"version": "r312",
 			"bundled": false
 		},
 		{
@@ -27,15 +27,13 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r311",
+			"version": "r312",
 			"bundled": false
 		}
 	],
 	"uniqueId": "lnbiat5brkg",
 	"objectTypes": {
-		"items": [
-			"Text_VersionInfo"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [],
@@ -50,7 +48,8 @@
 					},
 					{
 						"items": [
-							"button_Generateworld"
+							"button_Generateworld",
+							"text_Versiton"
 						],
 						"subfolders": [],
 						"name": "_UI"

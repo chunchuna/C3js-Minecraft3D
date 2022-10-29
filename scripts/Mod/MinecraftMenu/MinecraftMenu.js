@@ -8,7 +8,7 @@ export class MinecraftMenu {
 
     #runtime;
     #CurrentSence;
-    #Gameversion;
+    #Gameversion = "V1.0.1";
     #modVersion;
     #modName;
 
@@ -18,9 +18,15 @@ export class MinecraftMenu {
 
     Init(runtime) {
 
+        this.#runtime = runtime;
+
         this.#modName = "MinecraftMenu"
         this.#addListener(runtime)
         this.#ButtonManager(runtime)
+        
+        this.#updateGameVersion();
+        
+        
 
     }
 
@@ -43,8 +49,16 @@ export class MinecraftMenu {
         }
     }
 
+    #updateGameVersion() {
+        const text_version = this.#runtime.objects.text_Versiton.getFirstPickedInstance();
+        text_version.text = this.#Gameversion;
+
+
+    }
+
     #tick() {
-        console.log("MM tick test")
+        //console.log("MM tick test")
+        //this.#updateGameVersion();
     }
 
 }
