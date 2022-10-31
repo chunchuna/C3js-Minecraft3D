@@ -146,7 +146,9 @@
 				"subfolders": [
 					{
 						"items": [
-							"min3d_grass"
+							"min3d_grass",
+							"mini3d_grass_ground_big",
+							"min3d_drt"
 						],
 						"subfolders": [],
 						"name": "Assest"

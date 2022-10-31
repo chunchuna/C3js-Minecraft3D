@@ -43,7 +43,7 @@ export class MinecraftMenu {
         const button_Generateworld = runtime.objects.button_Generateworld.getFirstPickedInstance();
         if (button_Generateworld) {
             button_Generateworld.addEventListener("click", () => {
-                console.log("jump layout")
+                runtime.goToLayout("S GameWorld")
             })
         }
     }

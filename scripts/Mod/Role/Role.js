@@ -34,7 +34,7 @@ export class Role_c3_FpsRoleController {
         this.#role_instance_player = player;
         this.#role_instance_playerCam = playerCam;
 
-        this.#SET_PLAYER_MOVE_SPEED(13000);
+        this.#SET_PLAYER_MOVE_SPEED(1500); 
 
 
     }

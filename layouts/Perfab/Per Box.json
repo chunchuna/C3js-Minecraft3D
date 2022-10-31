@@ -75,10 +75,10 @@
 				{
 					"type": "Grass3",
 					"properties": {
-						"left-margin": 0,
-						"right-margin": 0,
-						"top-margin": 0,
-						"bottom-margin": 0,
+						"left-margin": 10,
+						"right-margin": 10,
+						"top-margin": 10,
+						"bottom-margin": 10,
 						"edges": "tile",
 						"fill": "tile",
 						"initially-visible": true,

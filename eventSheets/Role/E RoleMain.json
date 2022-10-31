@@ -15,10 +15,10 @@
 			"eventType": "variable",
 			"name": "MOVE_SPEED",
 			"type": "number",
-			"initialValue": "600",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
+			"isConstant": false,
 			"sid": 429165753502289
 		},
 		{

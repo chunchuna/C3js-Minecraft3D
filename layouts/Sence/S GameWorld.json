@@ -39,12 +39,59 @@
 			"overriden": 0,
 			"subLayers": [
 				{
-					"name": "ground",
+					"name": "blowground",
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "min3d_grass",
+							"type": "mini3d_grass_ground_big",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 457470125814783,
+								"object-left": 550097535868646,
+								"object-right": 550097535868646,
+								"object-top": 550097535868646,
+								"object-bottom": 550097535868646
+							},
+							"uid": 29,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 3401,
+								"y": 5949,
+								"width": 4113.504802750565,
+								"height": 3066.6138206913347,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "mini3d_grass_ground_big",
 							"properties": {
 								"shape": "box",
 								"z-height": 15,
@@ -74,10 +121,10 @@
 								}
 							},
 							"world": {
-								"x": 4025,
-								"y": 6283,
-								"width": 7314.504802750565,
-								"height": 8025.613820691335,
+								"x": 8136,
+								"y": 6331,
+								"width": 2460.4260763779494,
+								"height": 2076.1664303153684,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -89,7 +136,41 @@
 								"angle": 0,
 								"zElevation": 0
 							}
-						},
+						}
+					],
+					"sid": 706668524162781,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.1607843137254902,
+						0.19215686274509805,
+						0.21176470588235294,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
+					"name": "ground",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
 						{
 							"type": "min3d_grass",
 							"properties": {
@@ -138,7 +219,7 @@
 							}
 						},
 						{
-							"type": "min3d_grass",
+							"type": "min3d_drt",
 							"properties": {
 								"shape": "box",
 								"z-height": 15,
@@ -151,293 +232,11 @@
 								"face-bottom": true,
 								"z-tiling-factor": 8,
 								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
-							},
-							"uid": 24,
-							"instanceVariables": {},
-							"behaviors": {
-								"实体": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 5387,
-								"y": 7231,
-								"width": 800,
-								"height": 688,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "min3d_grass",
-							"properties": {
-								"shape": "box",
-								"z-height": 15,
-								"initially-visible": true,
-								"face-back": false,
-								"face-front": true,
-								"face-left": true,
-								"face-right": true,
-								"face-top": true,
-								"face-bottom": true,
-								"z-tiling-factor": 8,
-								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
-							},
-							"uid": 21,
-							"instanceVariables": {},
-							"behaviors": {
-								"实体": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 2874,
-								"y": 5980,
-								"width": 168.01535423847014,
-								"height": 201.0050976368699,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 10
-							}
-						},
-						{
-							"type": "min3d_grass",
-							"properties": {
-								"shape": "box",
-								"z-height": 15,
-								"initially-visible": true,
-								"face-back": false,
-								"face-front": true,
-								"face-left": true,
-								"face-right": true,
-								"face-top": true,
-								"face-bottom": true,
-								"z-tiling-factor": 8,
-								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
-							},
-							"uid": 7,
-							"instanceVariables": {},
-							"behaviors": {
-								"实体": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 3341,
-								"y": 6413,
-								"width": 476.7832867040255,
-								"height": 432.5810469860364,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 14
-							}
-						},
-						{
-							"type": "min3d_grass",
-							"properties": {
-								"shape": "box",
-								"z-height": 15,
-								"initially-visible": true,
-								"face-back": false,
-								"face-front": true,
-								"face-left": true,
-								"face-right": true,
-								"face-top": true,
-								"face-bottom": true,
-								"z-tiling-factor": 8,
-								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
-							},
-							"uid": 8,
-							"instanceVariables": {},
-							"behaviors": {
-								"实体": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 3617,
-								"y": 6425,
-								"width": 476.7832867040255,
-								"height": 432.5810469860364,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 28
-							}
-						},
-						{
-							"type": "min3d_grass",
-							"properties": {
-								"shape": "box",
-								"z-height": 15,
-								"initially-visible": true,
-								"face-back": false,
-								"face-front": true,
-								"face-left": true,
-								"face-right": true,
-								"face-top": true,
-								"face-bottom": true,
-								"z-tiling-factor": 8,
-								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
-							},
-							"uid": 9,
-							"instanceVariables": {},
-							"behaviors": {
-								"实体": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 3834,
-								"y": 6437,
-								"width": 476.7832867040255,
-								"height": 432.5810469860364,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 35
-							}
-						},
-						{
-							"type": "min3d_grass",
-							"properties": {
-								"shape": "box",
-								"z-height": 15,
-								"initially-visible": true,
-								"face-back": false,
-								"face-front": true,
-								"face-left": true,
-								"face-right": true,
-								"face-top": true,
-								"face-bottom": true,
-								"z-tiling-factor": 8,
-								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
-							},
-							"uid": 10,
-							"instanceVariables": {},
-							"behaviors": {
-								"实体": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 4063,
-								"y": 6450,
-								"width": 476.7832867040255,
-								"height": 432.5810469860364,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 52
-							}
-						},
-						{
-							"type": "min3d_grass",
-							"properties": {
-								"shape": "box",
-								"z-height": 15,
-								"initially-visible": true,
-								"face-back": false,
-								"face-front": true,
-								"face-left": true,
-								"face-right": true,
-								"face-top": true,
-								"face-bottom": true,
-								"z-tiling-factor": 8,
-								"object-back": 795253435159259,
-								"object-front": 457470125814783,
-								"object-left": 550097535868646,
-								"object-right": 550097535868646,
-								"object-top": 550097535868646,
-								"object-bottom": 550097535868646
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
 							},
 							"uid": 22,
 							"instanceVariables": {},
@@ -450,8 +249,102 @@
 								}
 							},
 							"world": {
-								"x": 4241,
-								"y": 6467,
+								"x": 3352,
+								"y": 7772,
+								"width": 4261.867463419647,
+								"height": 625.90957555309,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 12
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 30,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 21,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 1023.7608695521176,
+								"y": 6033.699553987766,
+								"width": 668.3050258082606,
+								"height": 4262.9849279096525,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 12
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 7,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 2420,
+								"y": 6619,
 								"width": 476.7832867040255,
 								"height": 432.5810469860364,
 								"originX": 0.5,
@@ -463,7 +356,242 @@
 									1
 								],
 								"angle": 0,
-								"zElevation": 65
+								"zElevation": 12
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 30,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 2426,
+								"y": 6081,
+								"width": 476.7832867040255,
+								"height": 432.5810469860364,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 12
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 60,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 8,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 3842,
+								"y": 6066,
+								"width": 476.7832867040255,
+								"height": 432.5810469860364,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 12
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 24,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 3345,
+								"y": 4190,
+								"width": 4096.864118960613,
+								"height": 583.5780423803733,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 12
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 9,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 2880,
+								"y": 6081,
+								"width": 476.7832867040255,
+								"height": 432.5810469860364,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 22
+							}
+						},
+						{
+							"type": "min3d_drt",
+							"properties": {
+								"shape": "box",
+								"z-height": 15,
+								"initially-visible": true,
+								"face-back": false,
+								"face-front": true,
+								"face-left": true,
+								"face-right": true,
+								"face-top": true,
+								"face-bottom": true,
+								"z-tiling-factor": 8,
+								"object-back": 795253435159259,
+								"object-front": 795253435159259,
+								"object-left": 795253435159259,
+								"object-right": 795253435159259,
+								"object-top": 795253435159259,
+								"object-bottom": 795253435159259
+							},
+							"uid": 10,
+							"instanceVariables": {},
+							"behaviors": {
+								"实体": {
+									"properties": {
+										"enabled": true,
+										"tags": ""
+									}
+								}
+							},
+							"world": {
+								"x": 3362,
+								"y": 6073,
+								"width": 476.7832867040255,
+								"height": 432.5810469860364,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 32
 							}
 						}
 					],
@@ -599,10 +727,10 @@
 				{
 					"type": "Grass3",
 					"properties": {
-						"left-margin": 0,
-						"right-margin": 0,
-						"top-margin": 0,
-						"bottom-margin": 0,
+						"left-margin": 10,
+						"right-margin": 10,
+						"top-margin": 10,
+						"bottom-margin": 10,
 						"edges": "tile",
 						"fill": "tile",
 						"initially-visible": true,
@@ -613,9 +741,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 376,
-						"y": -245,
-						"width": 110.98640449164024,
+						"x": 355.02579514149727,
+						"y": -248.75657400450797,
+						"width": 115.36907416356621,
 						"height": 109.99545445153632,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -785,8 +913,8 @@
 						}
 					},
 					"world": {
-						"x": 1224,
-						"y": 6333,
+						"x": 2019,
+						"y": 5982,
 						"width": 60.50390898791458,
 						"height": 60.50390898791458,
 						"originX": 0.5,

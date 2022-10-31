@@ -12,9 +12,9 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"table",
-		"3DGround",
 		"min3d_grass",
-		"3d_basebox"
+		"3d_basebox",
+		"mini3d_grass_ground_big",
+		"min3d_drt"
 	]
 }
