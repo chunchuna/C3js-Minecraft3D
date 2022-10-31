@@ -68,7 +68,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "MouseLook&Controls",
+			"title": "role_mouse",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -372,7 +372,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "ZCollisions",
+			"title": "role_z_collisions",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -658,7 +658,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "General",
+			"title": "role_general",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [

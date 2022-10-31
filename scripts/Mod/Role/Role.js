@@ -35,12 +35,13 @@ export class Role_c3_FpsRoleController {
         this.#role_instance_playerCam = playerCam;
 
         this.#SET_PLAYER_MOVE_SPEED(1500); 
+        this.#SET_PLAYER_HEIGHT(16);
 
 
     }
 
 
-    #SER_PLAYER_HEIGHT(height) {
+    #SET_PLAYER_HEIGHT(height) {
         this.#rt.globalVars.PLAYER_HEIGHT = height;
     }
 
