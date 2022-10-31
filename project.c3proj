@@ -4,7 +4,7 @@
 	"name": "Minecraft3d-construct3",
 	"runtime": "c3",
 	"useWorker": "auto",
-	"bundleAddons": false,
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
@@ -153,12 +153,25 @@
 				"items": [],
 				"subfolders": [
 					{
-						"items": [
-							"min3d_grass",
-							"mini3d_grass_ground_big",
-							"min3d_drt"
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"min3d_drt",
+									"min3d_grass",
+									"mini3d_grass_ground_big"
+								],
+								"subfolders": [],
+								"name": "box"
+							},
+							{
+								"items": [
+									"skybox"
+								],
+								"subfolders": [],
+								"name": "skybox"
+							}
 						],
-						"subfolders": [],
 						"name": "Assest"
 					},
 					{
@@ -492,10 +505,10 @@
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "nearest",
-		"downscaling": "medium",
-		"renderingMode": "auto",
-		"anisotropicFiltering": "auto",
-		"maxSpriteSheetSize": 2048,
+		"downscaling": "high",
+		"renderingMode": "3d",
+		"anisotropicFiltering": "4x",
+		"maxSpriteSheetSize": 4096,
 		"loaderStyle": "none",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",

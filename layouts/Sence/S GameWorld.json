@@ -17,12 +17,12 @@
 				1
 			],
 			"backgroundColor": [
-				0,
-				0,
-				0,
+				0.6274509803921569,
+				0.8,
+				0.9529411764705882,
 				1
 			],
-			"isTransparent": true,
+			"isTransparent": false,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
@@ -74,8 +74,8 @@
 								}
 							},
 							"world": {
-								"x": 3401,
-								"y": 5949,
+								"x": 3397,
+								"y": 5956,
 								"width": 4113.504802750565,
 								"height": 3066.6138206913347,
 								"originX": 0.5,
@@ -982,7 +982,7 @@
 	"effectTypes": [],
 	"width": 10000,
 	"height": 10000,
-	"unboundedScrolling": false,
+	"unboundedScrolling": true,
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
