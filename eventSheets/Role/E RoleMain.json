@@ -3,16 +3,6 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "dz",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "Delta-Z, i.e. the speed on the Z axis",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 281494330628766
-		},
-		{
-			"eventType": "variable",
 			"name": "MOVE_SPEED",
 			"type": "number",
 			"initialValue": "0",
@@ -43,13 +33,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PlayerOnGround",
+			"name": "PLAYER_ON_GROUND",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 694264515339599
+		},
+		{
+			"eventType": "variable",
+			"name": "DZ",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Delta-Z, i.e. the speed on the Z axis",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 297425156998570
 		},
 		{
 			"eventType": "comment",
@@ -398,7 +398,7 @@
 							"objectClass": "System",
 							"sid": 993997868486128,
 							"parameters": {
-								"variable": "dz",
+								"variable": "DZ",
 								"comparison": 2,
 								"value": "0"
 							}
@@ -438,7 +438,7 @@
 							"objectClass": "System",
 							"sid": 729442967986367,
 							"parameters": {
-								"variable": "dz",
+								"variable": "DZ",
 								"value": "0"
 							}
 						},
@@ -474,7 +474,7 @@
 									"objectClass": "System",
 									"sid": 977634727752273,
 									"parameters": {
-										"variable": "PlayerOnGround"
+										"variable": "PLAYER_ON_GROUND"
 									}
 								},
 								{
@@ -527,7 +527,7 @@
 									"objectClass": "System",
 									"sid": 120698798142604,
 									"parameters": {
-										"variable": "PlayerOnGround",
+										"variable": "PLAYER_ON_GROUND",
 										"value": "true"
 									}
 								}
@@ -555,7 +555,7 @@
 							"objectClass": "System",
 							"sid": 171697553000216,
 							"parameters": {
-								"variable": "PlayerOnGround",
+								"variable": "PLAYER_ON_GROUND",
 								"value": "false"
 							}
 						}
@@ -745,7 +745,7 @@
 							"objectClass": "System",
 							"sid": 899918140568201,
 							"parameters": {
-								"variable": "dz",
+								"variable": "DZ",
 								"value": "0"
 							}
 						}
@@ -813,7 +813,7 @@
 							"objectClass": "System",
 							"sid": 826004965061935,
 							"parameters": {
-								"variable": "dz",
+								"variable": "DZ",
 								"value": "GRAVITY * dt"
 							}
 						},
@@ -864,7 +864,7 @@
 									"objectClass": "System",
 									"sid": 667780955954336,
 									"parameters": {
-										"variable": "PlayerOnGround"
+										"variable": "PLAYER_ON_GROUND"
 									}
 								}
 							],
@@ -874,7 +874,7 @@
 									"objectClass": "System",
 									"sid": 914394762931645,
 									"parameters": {
-										"variable": "dz",
+										"variable": "DZ",
 										"value": "JUMP_STRENGTH"
 									}
 								}

@@ -47,7 +47,7 @@ export class Role_c3_FpsRoleController {
 
     #SET_PLAYER_MOVE_SPEED(speed) {
         this.#rt.globalVars.MOVE_SPEED = speed;
-        console.log(this.#rt.globalVars.MOVE_SPEED)
+        
     }
 
 

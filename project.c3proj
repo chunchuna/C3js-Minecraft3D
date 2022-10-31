@@ -93,6 +93,14 @@
 			"author": "Scirra",
 			"version": "r312",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "fogexponential",
+			"name": "雾效果 (指数)",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lnbiat5brkg",
@@ -164,6 +172,11 @@
 								],
 								"subfolders": [],
 								"name": "Grass"
+							},
+							{
+								"items": [],
+								"subfolders": [],
+								"name": "Skybox"
 							}
 						],
 						"name": "Texture"
@@ -280,6 +293,14 @@
 									"name": "MinWorldBuild.js",
 									"type": "application/javascript",
 									"sid": 804088390307183,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "MinWorldEnvironment.js",
+									"type": "application/javascript",
+									"sid": 419876149403524,
 									"script-info": {
 										"purpose": "none"
 									}

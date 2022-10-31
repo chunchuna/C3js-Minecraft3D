@@ -363,7 +363,7 @@
 							"type": "min3d_drt",
 							"properties": {
 								"shape": "box",
-								"z-height": 15,
+								"z-height": 60,
 								"initially-visible": true,
 								"face-back": false,
 								"face-front": true,
@@ -759,7 +759,25 @@
 				}
 			],
 			"sid": 514671008218632,
-			"effectTypes": [],
+			"effectTypes": [
+				{
+					"effectId": "fogexponential",
+					"name": "雾效果指数",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {
+							"fog-color": [
+								0.4627450980392157,
+								0.6313725490196078,
+								0.7568627450980392,
+								1
+							],
+							"fog-density": -0.004499999999999998,
+							"near-dist": 10
+						}
+					}
+				}
+			],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
 			"color": [
