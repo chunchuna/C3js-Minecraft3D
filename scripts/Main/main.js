@@ -3,6 +3,12 @@
 import {MinecraftMenu} from "../Mod/MinecraftMenu/MinecraftMenu.js"
 import {Miniruntime} from "../Runtime/Runtime.js";
 import {Role_c3_FpsRoleController} from "../Mod/Role/Role.js";
+import {MineWorldEnvironment} from "../Mod/MinecraftWorldBuild/MinWorldEnvironment.js";
+
+
+function Tick(runtime) {
+
+}
 
 runOnStartup(async runtime => {
     // Code to run on the loading screen.
@@ -21,14 +27,15 @@ async function OnBeforeProjectStart(runtime) {
     //MinecraftMenu
     InitModMinecraftMenu(runtime);
     InitRoleMod(runtime);
+    InitMineWorldEnvironment(runtime);
 
 }
 
-function Tick(runtime) {
 
-}
 
-// ******************************MinecraftMenu
+//#region  MinecraftMenu *************************
+
+
 
 function InitModMinecraftMenu(runtime) {
     const gameLayout = runtime.getLayout("S Menu");
@@ -51,10 +58,10 @@ function OnMenuEnd() {
 
 }
 
-//***************
+//#endregion ****************************************
 
 
-//*******************************Role******************
+//#region Role ****************************************
 
 function InitRoleMod(runtime) {
 
@@ -75,5 +82,25 @@ function OnRoleStart(runtime) {
 function OnRoleEnd() {
 
 }
+//#endregion ****************************************
 
-//************************************************
+
+//#region MineWorldEnvironment ***********************
+function InitMineWorldEnvironment (runtime){
+
+    const gameLayout = runtime.getLayout("S GameWorld");
+    
+    gameLayout.addEventListener("beforelayoutstart", () => OnMentStart(runtime));
+    gameLayout.addEventListener("beforelayoutend", () => OnMentEnd());
+}
+
+function  OnMentStart(runtime){
+
+    const MineWorldEnvironment_ = new  MineWorldEnvironment(runtime);
+    MineWorldEnvironment_.Init(runtime);
+    
+}
+
+
+//#endregion
+

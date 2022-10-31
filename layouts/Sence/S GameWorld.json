@@ -764,7 +764,7 @@
 					"effectId": "fogexponential",
 					"name": "雾效果指数",
 					"instance": {
-						"isEnabled": true,
+						"isEnabled": false,
 						"parameters": {
 							"fog-color": [
 								0.4627450980392157,
