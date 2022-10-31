@@ -1,0 +1,878 @@
+{
+	"name": "E RoleMain",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "dz",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Delta-Z, i.e. the speed on the Z axis",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 281494330628766
+		},
+		{
+			"eventType": "variable",
+			"name": "MOVE_SPEED",
+			"type": "number",
+			"initialValue": "600",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 429165753502289
+		},
+		{
+			"eventType": "variable",
+			"name": "JUMP_STRENGTH",
+			"type": "number",
+			"initialValue": "1.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 233038071222362
+		},
+		{
+			"eventType": "variable",
+			"name": "GRAVITY",
+			"type": "number",
+			"initialValue": "3.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 466548950802488
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerOnGround",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 694264515339599
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MouseLook&Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "On start of layout, set the initial 3D camera view. This is also necessary for mouse look to work, as the 3D Camera object needs to know what the initial orientation of the camera is."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 388915316674430
+						}
+					],
+					"actions": [
+						{
+							"id": "look-parallel-to-layout",
+							"objectClass": "3DCamera",
+							"sid": 712286930503464,
+							"parameters": {
+								"cam-x": "PlayerCam.X",
+								"cam-y": "PlayerCam.Y",
+								"cam-z": "PlayerCam.ZElevation + 25",
+								"look-angle": "PlayerCam.Angle"
+							}
+						}
+					],
+					"sid": 990302910525586
+				},
+				{
+					"eventType": "comment",
+					"text": "Every tick set the camera position to the player object. Note setting the camera position does not affect its orientation, so this will not interfere with mouse look. Also make the player object rotate with the camera."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 102739188723077
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "3DCamera",
+							"sid": 707934704107184,
+							"parameters": {
+								"x": "PlayerCam.X",
+								"y": "PlayerCam.Y",
+								"z": "PlayerCam.ZElevation + 25",
+								"which": "camera"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Player",
+							"sid": 143633384607789,
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation"
+							}
+						}
+					],
+					"sid": 988496959526164
+				},
+				{
+					"eventType": "comment",
+					"text": "When the player left clicks, request pointer lock so they can easily look in any direction. Note this can only be done in a user-input event, and can't be done automatically on startup."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 517883562314674,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "request-pointer-lock",
+							"objectClass": "Mouse",
+							"sid": 209559128359805
+						}
+					],
+					"sid": 259847648488419
+				},
+				{
+					"eventType": "comment",
+					"text": "When the mouse moves, rotate the camera by the mouse movement amount. This uses the mouse to control the camera look direction, aka mouse look."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-movement",
+							"objectClass": "Mouse",
+							"sid": 232027205977611
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-camera",
+							"objectClass": "3DCamera",
+							"sid": 872617298440492,
+							"parameters": {
+								"rotate-x": "Mouse.MovementX / 10",
+								"rotate-y": "Mouse.MovementY / 10",
+								"min-polar-angle": "20",
+								"max-polar-angle": "160"
+							}
+						}
+					],
+					"sid": 542804989929009
+				},
+				{
+					"eventType": "comment",
+					"text": "When using arrow keys or WASD, move the player object relative to the camera X rotation, i.e. the ground direction of movement. Note the left/right controls actually do a strafe, moving at 90 degrees relative to the camera X rotation. Also the Custom Movement behavior is used to push the player back out of any solids after attempting movement in each direction, ensuring they cannot pass through any solid."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 200632727406656,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 268738581942852,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Player",
+							"sid": 361094404005989,
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation",
+								"distance": "MOVE_SPEED * dt"
+							}
+						},
+						{
+							"id": "push-out-solid-at-angle",
+							"objectClass": "Player",
+							"sid": 529727676413355,
+							"behaviorType": "Custom",
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation + 180"
+							}
+						}
+					],
+					"sid": 965586021915384,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 252329557713525,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 320743522194677,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Player",
+							"sid": 559496592685429,
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation",
+								"distance": "-MOVE_SPEED * dt"
+							}
+						},
+						{
+							"id": "push-out-solid-at-angle",
+							"objectClass": "Player",
+							"sid": 229995365314907,
+							"behaviorType": "Custom",
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation"
+							}
+						}
+					],
+					"sid": 793916236051230,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 236847726397179,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 714909290483093,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Player",
+							"sid": 104577182088095,
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation - 90",
+								"distance": "MOVE_SPEED * dt"
+							}
+						},
+						{
+							"id": "push-out-solid-at-angle",
+							"objectClass": "Player",
+							"sid": 691450959059373,
+							"behaviorType": "Custom",
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation + 90"
+							}
+						}
+					],
+					"sid": 632764195502322,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 799320552319250,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 945384831130319,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Player",
+							"sid": 768065938203010,
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation + 90",
+								"distance": "MOVE_SPEED * dt"
+							}
+						},
+						{
+							"id": "push-out-solid-at-angle",
+							"objectClass": "Player",
+							"sid": 770116957535061,
+							"behaviorType": "Custom",
+							"parameters": {
+								"angle": "3DCamera.CameraXRotation - 90"
+							}
+						}
+					],
+					"sid": 518219700155364,
+					"isOrBlock": true
+				}
+			],
+			"sid": 897174677144784
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ZCollisions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Handle the player landing on the ground. If the player is falling, they are overlapping a 3D shape in 2D, and the player's Z elevation is also within the Z height of the 3D shape, then the player should land on it. Note the detection counts anywhere in the top 5 units on the Z axis as landing on the 3D shape. This is because falling can step several units per frame, so the player could fall in a range of locations within the 3D shape. By handling a fairly large range and snapping the player back to the top of the shape, the result is the player reliably lands exactly on top of the shape."
+				},
+				{
+					"eventType": "variable",
+					"name": "PlayerOldZ",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 671394304306786
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 993997868486128,
+							"parameters": {
+								"variable": "dz",
+								"comparison": 2,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player",
+							"sid": 497363868117128,
+							"parameters": {
+								"object": "f_3dground"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "f_3dground",
+							"sid": 747994766548193,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "Player.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "f_3dground",
+							"sid": 983415912140507,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "Player.ZElevation - Self.ZHeight + 5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 729442967986367,
+							"parameters": {
+								"variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 605344013859358,
+							"parameters": {
+								"variable": "PlayerOldZ",
+								"value": "Player.ZElevation"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Player",
+							"sid": 878953183673035,
+							"parameters": {
+								"z": "f_3dground.ZElevation + f_3dground.ZHeight"
+							}
+						}
+					],
+					"sid": 420842890916824,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Note the [i]PlayerOnGround[/i] flag has not been updated yet - it's still left as the value from the previous tick. So if the player was on the ground last tick, and they are snapping up to a new Z elevation at least 0.5 units higher than before, then the player is moving up a step. Normally this would snap the camera up which would look unnatural. To improve how this looks, instead smoothly tween the PlayerCam object's Z elevation up to where the player has moved."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 977634727752273,
+									"parameters": {
+										"variable": "PlayerOnGround"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 734684855149870,
+									"parameters": {
+										"variable": "PlayerOldZ",
+										"comparison": 3,
+										"value": "Player.ZElevation - 0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all-tweens",
+									"objectClass": "PlayerCam",
+									"sid": 165943139831324,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "PlayerCam",
+									"sid": 578508195471413,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetZElevation",
+										"end-value": "Player.ZElevation",
+										"time": "0.1",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								}
+							],
+							"sid": 646537245361250
+						},
+						{
+							"eventType": "comment",
+							"text": "Now set the [i]PlayerOnGround[/i] flag to indicate the player is standing on the ground."
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 120698798142604,
+									"parameters": {
+										"variable": "PlayerOnGround",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 756200444805477
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "If the previous event didn't run, clear the [i]PlayerOnGround[/i] flag to indicate the player is not standing on the ground (i.e. they are in the air)."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 317212023344344
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 171697553000216,
+							"parameters": {
+								"variable": "PlayerOnGround",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 952115989924576
+				},
+				{
+					"eventType": "comment",
+					"text": "When not tweening the PlayerCam Z elevation, just follow the player's Z elevation exactly."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-any-playing",
+							"objectClass": "PlayerCam",
+							"sid": 864485138365938,
+							"behaviorType": "Tween",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-z-elevation",
+							"objectClass": "PlayerCam",
+							"sid": 677957618630590,
+							"parameters": {
+								"z": "Player.ZElevation"
+							}
+						}
+					],
+					"sid": 373383638916683
+				},
+				{
+					"eventType": "comment",
+					"text": "The 3D shapes for the ground have the Solid behavior. This should only be enabled if the player Z elevation is within its Z height, otherwise it should be disabled so they are able to pass it overhead or underneath. Note that the 3D shape the player is landing on or standing on must remain disabled otherwise the solid behavior will interfere with the player movement. So a small offset is applied so the solid behavior remains disabled if the player is within 1 unit of the 3D shape's top."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 619318079856594
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "f_3dground",
+							"sid": 277964063091119,
+							"behaviorType": "实体",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 854471457790479
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "f_3dground",
+							"sid": 914817900165271,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 4,
+								"z-elevation": "Player.ZElevation - Self.ZHeight + 1"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "f_3dground",
+							"sid": 849812210379920,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 2,
+								"z-elevation": "Player.ZElevation"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "f_3dground",
+							"sid": 591885214075942,
+							"behaviorType": "实体",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 779576251476977
+				}
+			],
+			"sid": 146611138470164
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "General",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "On start of layout, remember the player start position so they can be repositioned there if they fall off the level."
+				},
+				{
+					"eventType": "variable",
+					"name": "StartX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 111464067950148
+				},
+				{
+					"eventType": "variable",
+					"name": "StartY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 566946138387608
+				},
+				{
+					"eventType": "variable",
+					"name": "StartZ",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 156120611778315
+				},
+				{
+					"eventType": "comment",
+					"text": "If the player falls off the level, reposition them back to the start."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "Player",
+							"sid": 574761263084439,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "-100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player",
+							"sid": 429346754962147,
+							"parameters": {
+								"x": "StartX",
+								"y": "StartY"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Player",
+							"sid": 550427459190568,
+							"parameters": {
+								"z": "StartZ"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Player",
+							"sid": 233736676643164,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 899918140568201,
+							"parameters": {
+								"variable": "dz",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 133536231848280,
+					"disabled": true
+				},
+				{
+					"eventType": "comment",
+					"text": "The PlayerCamera object is attached to the player following its position and angle, but handles Z elevation separately. This is to allow it to smooth out the Z elevation when moving up stairs."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 631445596980262
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "PlayerCam",
+							"sid": 450653097943882,
+							"parameters": {
+								"object": "Player",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Player",
+							"sid": 818626112291590,
+							"parameters": {
+								"child": "PlayerCam",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": true,
+								"transform-z-elevation": false,
+								"destroy-with-parent": false
+							}
+						}
+					],
+					"sid": 739068258415460
+				},
+				{
+					"eventType": "comment",
+					"text": "Handle player movement on the Z axis. Always accelerate the player downwards according to the force of gravity, and move the player according to the current speed on the Z axis (the [i]dz[/i] variable)."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 747495162964271
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 826004965061935,
+							"parameters": {
+								"variable": "dz",
+								"value": "GRAVITY * dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Player",
+							"sid": 884439155018026,
+							"parameters": {
+								"z": "Self.ZElevation + dz"
+							}
+						}
+					],
+					"sid": 267509376931618
+				},
+				{
+					"eventType": "comment",
+					"text": "Pressing space or right-clicking causes the player to jump, by setting the [i]dz[/i] variable to a positive number (meaning moving up on the Z axis). This can only be done if the player is on the ground."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 970878688322335,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 512896600775640,
+							"parameters": {
+								"mouse-button": "right",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 396873697830684,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 667780955954336,
+									"parameters": {
+										"variable": "PlayerOnGround"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 914394762931645,
+									"parameters": {
+										"variable": "dz",
+										"value": "JUMP_STRENGTH"
+									}
+								}
+							],
+							"sid": 858039566068077
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 110509960290918
+		}
+	],
+	"sid": 422746218217396
+}

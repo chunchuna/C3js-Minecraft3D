@@ -1,0 +1,20 @@
+{
+	"name": "Grass3",
+	"plugin-id": "NinePatch",
+	"sid": 795253435159259,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 114,
+		"height": 112,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6127633,
+		"useCollisionPoly": true
+	}
+}

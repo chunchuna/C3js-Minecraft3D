@@ -1,9 +1,9 @@
 {
-	"name": "3D相机",
+	"name": "3DCamera",
 	"plugin-id": "Camera3D",
 	"sid": 327891538857470,
 	"singleglobal-inst": {
-		"type": "3D相机",
+		"type": "3DCamera",
 		"properties": {},
 		"uid": 6
 	}

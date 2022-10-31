@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="941da521-f4b4-467f-8dca-4a8c4c41f20f" name="Default Changelist" comment="" />
+    <list default="true" id="159ba6e0-fab2-468c-9456-369df2e77f67" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,14 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/scripts/Runtime/Runtime.js" />
-      <option value="$PROJECT_DIR$/scripts/Main/main.js" />
-      <option value="$PROJECT_DIR$/scripts/Mod/MinecraftMenu/MinecraftMenu.js" />
-    </changedPaths>
-  </component>
-  <component name="ProjectId" id="2GlsVpj3xGIDJEncnHqfc5Y8QIQ" />
+  <component name="ProjectId" id="2GuI2IOkK5pwYCgE8H6AyG2pljI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,29 +19,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="941da521-f4b4-467f-8dca-4a8c4c41f20f" name="Default Changelist" comment="" />
-      <created>1666974547625</created>
+      <changelist id="159ba6e0-fab2-468c-9456-369df2e77f67" name="Default Changelist" comment="" />
+      <created>1667231862333</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666974547625</updated>
-      <workItem from="1666974555213" duration="2152000" />
-      <workItem from="1667018218296" duration="1514000" />
-      <workItem from="1667229049685" duration="1660000" />
+      <updated>1667231862333</updated>
+      <workItem from="1667231872220" duration="113000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

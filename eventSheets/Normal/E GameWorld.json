@@ -1,0 +1,10 @@
+{
+	"name": "E GameWorld",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "E RoleMain"
+		}
+	],
+	"sid": 477968197204826
+}

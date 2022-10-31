@@ -45,6 +45,54 @@
 			"author": "Scirra",
 			"version": "r312",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "补间动画",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "custom",
+			"name": "自定义",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "实体",
+			"author": "Scirra",
+			"version": "r312",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lnbiat5brkg",
@@ -75,7 +123,7 @@
 			},
 			{
 				"items": [
-					"3D相机"
+					"3DCamera"
 				],
 				"subfolders": [],
 				"name": "Addon"
@@ -105,41 +153,89 @@
 					},
 					{
 						"items": [],
-						"subfolders": [],
+						"subfolders": [
+							{
+								"items": [
+									"Grass",
+									"Grass2",
+									"Grass3"
+								],
+								"subfolders": [],
+								"name": "Grass"
+							}
+						],
 						"name": "Texture"
 					}
 				],
 				"name": "MinecraftWorldBuild"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"PlayerCam",
+							"Player",
+							"Mouse",
+							"Keyboard",
+							"3DGround",
+							"table"
+						],
+						"subfolders": [],
+						"name": "Assest"
+					}
+				],
+				"name": "Role"
 			}
 		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"f_3dground"
+		],
 		"subfolders": []
 	},
 	"layouts": {
-		"items": [
-			"S Menu",
-			"S GameWorld"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
-					"场景 1"
+					"Per Box"
 				],
 				"subfolders": [],
 				"name": "Perfab"
+			},
+			{
+				"items": [
+					"S Menu",
+					"S GameWorld"
+				],
+				"subfolders": [],
+				"name": "Sence"
 			}
 		]
 	},
 	"eventSheets": {
-		"items": [
-			"E Menu",
-			"E GameWorld"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"E RoleMain"
+				],
+				"subfolders": [],
+				"name": "Role"
+			},
+			{
+				"items": [
+					"E GameWorld",
+					"E Menu"
+				],
+				"subfolders": [],
+				"name": "Normal"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
@@ -189,6 +285,20 @@
 							],
 							"subfolders": [],
 							"name": "MinecraftWorldBuild"
+						},
+						{
+							"items": [
+								{
+									"name": "Role.js",
+									"type": "application/javascript",
+									"sid": 385149372905823,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "Role"
 						}
 					],
 					"name": "Mod"
@@ -328,7 +438,7 @@
 		"appId": "",
 		"pixelRounding": true,
 		"zAxisScale": "normalized",
-		"fov": 0.7853981633974483,
+		"fov": 1.0471975511965976,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",

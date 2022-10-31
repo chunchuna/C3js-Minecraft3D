@@ -1,0 +1,20 @@
+{
+	"name": "f_3dground",
+	"plugin-id": "Shape3D",
+	"sid": 276114983831483,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "实体",
+			"sid": 379254622048568
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"table",
+		"3DGround",
+		"min3d_grass",
+		"3d_basebox"
+	]
+}
