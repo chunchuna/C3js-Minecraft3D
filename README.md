@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/32768062/198698980-7934ff2c-f52a-4fd1-9a72-93e7971a5fad.png)
 
 
-# Minecraft
+# Minecraft 3d 
 Open Source minecraft 3d game project made with a 2d game engine .
 
 
