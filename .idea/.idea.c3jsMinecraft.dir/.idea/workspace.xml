@@ -15,6 +15,8 @@
       <option value="$PROJECT_DIR$/scripts/Runtime/Runtime.js" />
       <option value="$PROJECT_DIR$/scripts/Main/main.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/MinecraftMenu/MinecraftMenu.js" />
+      <option value="$PROJECT_DIR$/scripts/Mod/MinecraftWorldBuild/MinWorldBuild.js" />
+      <option value="$PROJECT_DIR$/scripts/Mod/Role/Role.js" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2GlsVpj3xGIDJEncnHqfc5Y8QIQ" />
@@ -26,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -39,7 +41,7 @@
       <updated>1666974547625</updated>
       <workItem from="1666974555213" duration="2152000" />
       <workItem from="1667018218296" duration="1514000" />
-      <workItem from="1667229049685" duration="1660000" />
+      <workItem from="1667229049685" duration="2488000" />
     </task>
     <servers />
   </component>
