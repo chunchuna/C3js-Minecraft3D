@@ -2,6 +2,7 @@
 // import * as myModule from "./mymodule.js";
 import {MinecraftMenu} from "../Mod/MinecraftMenu/MinecraftMenu.js"
 import {Miniruntime} from "../Runtime/Runtime.js";
+import {Role_c3_FpsRoleController} from "../Mod/Role/Role.js";
 
 runOnStartup(async runtime => {
     // Code to run on the loading screen.
@@ -18,7 +19,8 @@ async function OnBeforeProjectStart(runtime) {
     runtime.addEventListener("tick", () => Tick(runtime));
 
     //MinecraftMenu
-    InitModMinecraftMenu(runtime)
+    InitModMinecraftMenu(runtime);
+    InitRoleMod(runtime);
 
 }
 
@@ -51,3 +53,27 @@ function OnMenuEnd() {
 
 //***************
 
+
+//*******************************Role******************
+
+function InitRoleMod(runtime) {
+
+    const gameLayout = runtime.getLayout("S GameWorld");
+    gameLayout.addEventListener("beforelayoutstart", () => OnRoleStart(runtime));
+    gameLayout.addEventListener("beforelayoutend", () => OnRoleEnd());
+
+}
+
+function OnRoleStart(runtime) {
+
+    const RoleMod = new Role_c3_FpsRoleController();
+    RoleMod.Init(runtime);
+
+}
+
+
+function OnRoleEnd() {
+
+}
+
+//************************************************

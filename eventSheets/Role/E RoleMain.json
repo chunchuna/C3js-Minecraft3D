@@ -52,6 +52,20 @@
 			"sid": 694264515339599
 		},
 		{
+			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_HEIGHT",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 968364572286458
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "MouseLook&Controls",
@@ -75,11 +89,11 @@
 						{
 							"id": "look-parallel-to-layout",
 							"objectClass": "3DCamera",
-							"sid": 712286930503464,
+							"sid": 215459574831658,
 							"parameters": {
 								"cam-x": "PlayerCam.X",
 								"cam-y": "PlayerCam.Y",
-								"cam-z": "PlayerCam.ZElevation + 25",
+								"cam-z": "PlayerCam.ZElevation + PLAYER_HEIGHT",
 								"look-angle": "PlayerCam.Angle"
 							}
 						}
@@ -103,11 +117,11 @@
 						{
 							"id": "set-position",
 							"objectClass": "3DCamera",
-							"sid": 707934704107184,
+							"sid": 644907198159949,
 							"parameters": {
 								"x": "PlayerCam.X",
 								"y": "PlayerCam.Y",
-								"z": "PlayerCam.ZElevation + 25",
+								"z": "PlayerCam.ZElevation + PLAYER_HEIGHT",
 								"which": "camera"
 							}
 						},

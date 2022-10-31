@@ -16,6 +16,7 @@
       <option value="$PROJECT_DIR$/scripts/Main/main.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/MinecraftMenu/MinecraftMenu.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/MinecraftWorldBuild/MinWorldBuild.js" />
+      <option value="$PROJECT_DIR$/scripts/Main/Main.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/Role/Role.js" />
     </changedPaths>
   </component>
@@ -41,7 +42,7 @@
       <updated>1666974547625</updated>
       <workItem from="1666974555213" duration="2152000" />
       <workItem from="1667018218296" duration="1514000" />
-      <workItem from="1667229049685" duration="2488000" />
+      <workItem from="1667229049685" duration="3430000" />
     </task>
     <servers />
   </component>
