@@ -34,24 +34,24 @@ export class Role_c3_FpsRoleController {
         this.#role_instance_player = player;
         this.#role_instance_playerCam = playerCam;
 
-        this.#SET_PLAYER_MOVE_SPEED(1500); 
-        this.#SET_PLAYER_HEIGHT(16);
+        this.#SetPlayerMoveSpeed(1500); 
+        this.#SetPlayerHeight(16);
 
 
     }
 
 
-    #SET_PLAYER_HEIGHT(height) {
+    #SetPlayerHeight(height) {
         this.#rt.globalVars.PLAYER_HEIGHT = height;
     }
 
-    #SET_PLAYER_MOVE_SPEED(speed) {
+    #SetPlayerMoveSpeed(speed) {
         this.#rt.globalVars.MOVE_SPEED = speed;
         
     }
 
 
-    #SET_PLAYER_GRAVITY(gravity) {
+    #SetGravity(gravity) {
         this.#rt.globalVars.GRAVITY = gravity;
     }
 
