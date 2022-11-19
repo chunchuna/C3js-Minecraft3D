@@ -25,6 +25,7 @@ export class MinecraftMenu {
         this.#ButtonManager(runtime)
         
         this.#updateGameVersion();
+		
         
 
     }

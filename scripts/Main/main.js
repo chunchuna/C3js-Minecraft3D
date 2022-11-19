@@ -4,6 +4,7 @@ import {MinecraftMenu} from "../Mod/MinecraftMenu/MinecraftMenu.js"
 import {Miniruntime} from "../Runtime/Runtime.js";
 import {Role_c3_FpsRoleController} from "../Mod/Role/Role.js";
 import {MineWorldEnvironment} from "../Mod/MinecraftWorldBuild/MinWorldEnvironment.js";
+import {MinWorldBuilder} from "../Mod/MinecraftWorldBuild/MinWorldBuild.js";
 
 
 function Tick(runtime) {
@@ -28,12 +29,14 @@ async function OnBeforeProjectStart(runtime) {
     InitModMinecraftMenu(runtime);
     InitRoleMod(runtime);
     InitMineWorldEnvironment(runtime);
+    InitMinBuilder(runtime);
+    
 
 }
 
 
 
-//#region  MinecraftMenu *************************
+//#region  MinecraftMenu 
 
 
 
@@ -58,10 +61,10 @@ function OnMenuEnd() {
 
 }
 
-//#endregion ****************************************
+//#endregion 
 
 
-//#region Role ****************************************
+//#region Role 
 
 function InitRoleMod(runtime) {
 
@@ -82,10 +85,10 @@ function OnRoleStart(runtime) {
 function OnRoleEnd() {
 
 }
-//#endregion ****************************************
+//#endregion 
 
 
-//#region MineWorldEnvironment ***********************
+//#region MineWorldEnvironment 
 function InitMineWorldEnvironment (runtime){
 
     const gameLayout = runtime.getLayout("S GameWorld");
@@ -103,4 +106,30 @@ function  OnMentStart(runtime){
 
 
 //#endregion
+
+
+//#region MineBuilder
+
+function InitMinBuilder(runtime)
+{
+    const gameLayout = runtime.getLayout("S GameWorld");
+
+    gameLayout.addEventListener("beforelayoutstart", () => OnMieBuilderStart(runtime));
+    gameLayout.addEventListener("beforelayoutend", () =>OnMieBuilderEnd());
+}
+
+
+function OnMieBuilderStart(runtime){
+    const  MineBuilder =new  MinWorldBuilder();
+    MineBuilder.Init(runtime)
+    
+}
+
+function OnMieBuilderEnd(){
+
+}
+
+//#endregion
+
+
 

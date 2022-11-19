@@ -12,12 +12,12 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/scripts/Runtime/Runtime.js" />
       <option value="$PROJECT_DIR$/scripts/Main/main.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/MinecraftMenu/MinecraftMenu.js" />
-      <option value="$PROJECT_DIR$/scripts/Mod/MinecraftWorldBuild/MinWorldBuild.js" />
-      <option value="$PROJECT_DIR$/scripts/Main/Main.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/MinecraftWorldBuild/MinWorldEnvironment.js" />
+      <option value="$PROJECT_DIR$/scripts/Runtime/Runtime.js" />
+      <option value="$PROJECT_DIR$/scripts/Main/Main.js" />
+      <option value="$PROJECT_DIR$/scripts/Mod/MinecraftWorldBuild/MinWorldBuild.js" />
       <option value="$PROJECT_DIR$/scripts/Mod/Role/Role.js" />
     </changedPaths>
   </component>
@@ -44,7 +44,8 @@
       <workItem from="1666974555213" duration="2152000" />
       <workItem from="1667018218296" duration="1514000" />
       <workItem from="1667229049685" duration="7730000" />
-      <workItem from="1667402638242" duration="91000" />
+      <workItem from="1667402638242" duration="587000" />
+      <workItem from="1668837317443" duration="1615000" />
     </task>
     <servers />
   </component>

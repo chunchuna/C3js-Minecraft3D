@@ -1,33 +1,16 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 31600,
+	"savedWithRelease": 31902,
 	"name": "Minecraft3d-construct3",
 	"runtime": "c3",
 	"useWorker": "auto",
-	"bundleAddons": true,
+	"bundleAddons": false,
 	"usedAddons": [
-		{
-			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
-			"author": "Scirra",
-			"version": "r316",
-			"bundled": false
-		},
 		{
 			"type": "plugin",
 			"id": "Button",
 			"name": "按钮",
 			"author": "Scirra",
-			"version": "r316",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r316",
 			"bundled": false
 		},
 		{
@@ -35,31 +18,6 @@
 			"id": "Camera3D",
 			"name": "3D相机",
 			"author": "Scirra",
-			"version": "r316",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Shape3D",
-			"name": "3D形状",
-			"author": "Scirra",
-			"version": "r316",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "NinePatch",
-			"name": "9-patch",
-			"author": "Scirra",
-			"version": "r316",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Mouse",
-			"name": "Mouse",
-			"author": "Scirra",
-			"version": "r316",
 			"bundled": false
 		},
 		{
@@ -67,7 +25,41 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r316",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Shape3D",
+			"name": "3D形状",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -75,7 +67,6 @@
 			"id": "Tween",
 			"name": "补间动画",
 			"author": "Scirra",
-			"version": "r316",
 			"bundled": false
 		},
 		{
@@ -83,7 +74,6 @@
 			"id": "custom",
 			"name": "自定义",
 			"author": "Scirra",
-			"version": "r316",
 			"bundled": false
 		},
 		{
@@ -91,7 +81,6 @@
 			"id": "solid",
 			"name": "实体",
 			"author": "Scirra",
-			"version": "r316",
 			"bundled": false
 		},
 		{
@@ -99,7 +88,6 @@
 			"id": "fogexponential",
 			"name": "雾效果 (指数)",
 			"author": "Scirra",
-			"version": "r316",
 			"bundled": false
 		}
 	],
@@ -508,6 +496,8 @@
 		"downscaling": "high",
 		"renderingMode": "3d",
 		"anisotropicFiltering": "4x",
+		"zNear": 1,
+		"zFar": 10000,
 		"maxSpriteSheetSize": 4096,
 		"loaderStyle": "none",
 		"preloadSounds": true,
